@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# Do not ignore directories, otherwise Git won't scan them for main.py
+!*/
+
+# Track the .gitignore file itself (optional but highly recommended)
+!.gitignore
+
+# Whitelist main.py anywhere in the repository
+!main.py
