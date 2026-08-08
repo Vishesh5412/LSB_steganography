@@ -1,11 +1,37 @@
-# Ignore everything
-*
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
-# Do not ignore directories, otherwise Git won't scan them for main.py
-!*/
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# Track the .gitignore file itself (optional but highly recommended)
-!.gitignore
+# Virtual Environments
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
-# Whitelist main.py anywhere in the repository
-!main.py
+# Local test outputs and images
+output_*.png
+*.jpg
+*.jpeg
+*.png

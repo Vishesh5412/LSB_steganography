@@ -1,11 +1,26 @@
 from PIL import Image
 import cv2
 import sys
+import os
 
+    
+def hide_text():
+    if (len(sys.argv) != 3):
+        print("Error, Enter valid command!!")
+        return
 
-# print(sys.argv)
+    path_to_img = sys.argv[1]
+    str = sys.argv[2]
 
-def LSBS(img, str):
+    if not os.path.exists(path_to_img):
+        print("Error, Enter a valid path!!")
+        return
+
+    img = cv2.imread(path_to_img)
+    if img is None:
+        print("Error, Enter a valid image!!")
+        return
+
     str += "\0"
     h, w, c = img.shape
     c_idx = 0
@@ -25,12 +40,28 @@ def LSBS(img, str):
 
             c_idx = c_idx + 1
 
-    cv2.imwrite('output_image.png', img)
+    base_name = os.path.basename(path_to_img)
+    file_name_only, extension = os.path.splitext(base_name)
 
+    cv2.imwrite(f"output_{file_name_only}.png", img) 
 
-def collect(img):
+def show_text():
+    if (len(sys.argv) != 2):
+        print("Error, Enter valid command!!")
+        return
+    
+    path_to_img = sys.argv[1]
+    
+    if not os.path.exists(path_to_img):
+        print("Error, Enter a valid path!!")
+        return
+
+    img = cv2.imread(path_to_img)
+    if img is None:
+        print("Error, Enter a valid image!!")
+        return
+
     decoded_message = ""
-
     h, w, c = img.shape
     c_idx = 0
 
@@ -46,7 +77,10 @@ def collect(img):
             c_idx = c_idx + 1
         decoded_char = chr(int(ascii_str, 2))
         if (decoded_char == "\0"):
-            return decoded_message
+            print(decoded_message)
+            return
         decoded_message += decoded_char
 
-    return decoded_message
+    print(decoded_message)
+
+
