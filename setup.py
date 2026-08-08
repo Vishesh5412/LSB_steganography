@@ -5,7 +5,7 @@ setup(
     name="my_package",
     version="1.0.0",
     packages=find_packages(),
-    install_requires=[],
+    install_requires=["opencv-python"],    
     entry_points={
         "console_scripts": [
             # format is: "command-name = package_name.file_name:function_name"

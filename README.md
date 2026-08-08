@@ -8,7 +8,7 @@ A lightweight, high-performance command-line tool written in Python to securely 
 Run the following commands in your terminal to clone the repository, set up a virtual environment, and install the package:
 
 ```bash
-git clone [https://github.com/Vishesh5412/LSB_steganography.git](https://github.com/Vishesh5412/LSB_steganography.git)
+git clone https://github.com/Vishesh5412/LSB_steganography.git
 cd LSB_steganography
 python3 -m venv venv
 source venv/bin/activate
@@ -32,3 +32,10 @@ Extracts and displays the original text hidden inside an image.
 **Syntax:**
 ```bash
 show_text <image_path>
+```
+
+## Important Notes
+
+* **Character Support:** This program only supports standard ASCII characters and does not support emojis or other non-ASCII characters.
+* **File Format & Sharing:** The resultant file will be saved as a **`.png`** file (which is lossless). When sending the image to someone over the internet, make sure to send it **as a document** (file attachment) rather than a compressed photo, so that chatting platforms do not re-encode or alter the pixels, preserving your hidden message.
+
